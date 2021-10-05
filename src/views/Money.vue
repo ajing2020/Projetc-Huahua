@@ -1,17 +1,14 @@
 <template>
-    <div>
-        123123
-    </div>
+  <div>money.vue
+  <Nav />
+  </div>
 </template>
 
 <script lang="ts">
-    import Vue from 'vue'
-
-    export default Vue.extend({
-        
-    })
+export default {
+  name: "Money"
+};
 </script>
 
 <style scoped>
-
 </style>
