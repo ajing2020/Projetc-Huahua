@@ -3,8 +3,7 @@
     <span class="name">备注</span>
     <input
       type="text"
-      :value="value"
-      @input="onChange"
+      v-model="value"
       placeholder="请输入备注"
     />
   </label>
@@ -17,10 +16,7 @@ import { Component } from "vue-property-decorator";
 @Component
 export default class Notes extends Vue {
   value = "";
-  onChange(event){
-    const input = event.target;
-    this.value = input.value;
-  }
+  
 }
 </script>
 
