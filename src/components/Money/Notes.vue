@@ -1,14 +1,27 @@
 <template>
   <label class="notes">
     <span class="name">备注</span>
-    <input type="text" placeholder="请输入备注" />
+    <input
+      type="text"
+      :value="value"
+      @input="onChange"
+      placeholder="请输入备注"
+    />
   </label>
 </template>
 
 <script>
-export default {
-  name: "Notes",
-};
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
+
+@Component
+export default class Notes extends Vue {
+  value = "";
+  onChange(event){
+    const input = event.target;
+    this.value = input.value;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
