@@ -3,14 +3,16 @@
     <div class="content" :class="classPrefix && `${classPrefix}-content`">
       <slot></slot>
     </div>
-    <Nav />
+    <NavTab />
   </div>
 </template>
 
 <script lang="ts">
+import NavTab from '@/components/NavTab.vue'
 export default {
   props: ["classPrefix"],
   name: "Layout",
+  components:{NavTab}
 };
 </script>
 
