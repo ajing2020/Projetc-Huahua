@@ -1,5 +1,5 @@
 <template>
-  <label class="notes">
+  <label class="formitem">
     <span class="name">{{this.fieldName}}</span>
     <input type="text" v-model="value" :placeholder="this.placeholder" />
   </label>
@@ -9,7 +9,7 @@
 import Vue from "vue";
 import { Component,Watch,Prop } from "vue-property-decorator";
 @Component
-export default class Notes extends Vue {
+export default class FormItem extends Vue {
   value = "";
 
   @Prop({required:true}) fieldName!:string;
@@ -23,9 +23,8 @@ export default class Notes extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.notes {
+.formitem {
   font-size: 14px;
-  background: #f5f5f5;
   padding-left: 16px;
   display: flex;
   align-items: center;
@@ -33,7 +32,7 @@ export default class Notes extends Vue {
     padding-right: 16px;
   }
   input {
-    height: 64px;
+    height: 40px;
     flex-grow: 1;
     background: transparent;
     border: none;
