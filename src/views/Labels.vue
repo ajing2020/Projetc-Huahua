@@ -12,7 +12,9 @@
       </router-link>
     </div>
     <div class="createTag-wrapper">
-      <DefaultButton class="createTag" @click="createTag">新建标签</DefaultButton>
+      <DefaultButton class="createTag" @click="createTag"
+        >新建标签</DefaultButton
+      >
     </div>
   </Layout>
 </template>
@@ -20,17 +22,19 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import DefaultButton from '@/components/DefaultButton.vue'
-import createTag from '@/lib/createTag'
+import DefaultButton from "@/components/DefaultButton.vue";
 
 @Component({
-  components:{DefaultButton}
+  components: { DefaultButton },
 })
 export default class Label extends Vue {
-  
   // tags = store.tagList
-  // createTag = createTag
-  
+  createTag() {
+    const name = window.prompt("请输出标签名");
+    if (name) {
+      // store.createTag(name);
+    }
+  }
 }
 </script>
 
