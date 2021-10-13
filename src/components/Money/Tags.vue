@@ -19,21 +19,17 @@
 <script lang="ts">
 import TagHelper from "@/mixins/tagHelper";
 import { mixins } from "vue-class-component";
-import { Component} from "vue-property-decorator";
+import { Component } from "vue-property-decorator";
 
-@Component({
-  computed:{
-    tagList(){
-      return this.$store.state.tagList
-    }
-  }
-})
+@Component
 export default class Tags extends mixins(TagHelper) {
-  // tagList = store.fetchTags();
+  get tagList() {
+    return this.$store.state.tagList;
+  }
   selectedTags: string[] = [];
 
-  created(){
-    this.$store.commit('fetchTags')
+  created() {
+    this.$store.commit("fetchTags");
   }
 
   toggle(tag: string) {
@@ -50,7 +46,7 @@ export default class Tags extends mixins(TagHelper) {
     if (!name) {
       return window.alert("标签名不能为空");
     }
-    this.$store.commit('createTag',name);
+    this.$store.commit("createTag", name);
   }
 }
 </script>

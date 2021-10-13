@@ -29,29 +29,31 @@ import DefaultButton from "@/components/DefaultButton.vue";
   components: { FormItem, DefaultButton },
 })
 export default class EditLabel extends Vue {
-  tag?: { id: string; name: string } = undefined;
+  get tag(){
+    return this.$store.state.currentTag;
+  }
 
   created() {
     const id = this.$route.params.id;
-    // this.tag = store.findTag(id);
+    this.$store.commit('setCurrentTag',id);
     if (!this.tag) {
       this.$router.replace("/404");
     }
   }
 
-  update(name: string) {
-    if (this.tag) {
+  // update(name: string) {
+    // if (this.tag) {
       // store.updateTag(this.tag.id, name);
-    }
-  }
+  //   }
+  // }
 
-  remove() {
-    if (this.tag) {
+  // remove() {
+    // if (this.tag) {
       // if (store.removeTag(this.tag.id)) {
         // this.$router.back();
       // }
-    }
-  }
+    // }
+  // }
 
   goBack() {
     this.$router.back();
