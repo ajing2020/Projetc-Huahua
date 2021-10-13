@@ -1,7 +1,7 @@
 <template>
   <div class="tags">
     <div class="new">
-      <button @click="create">新增标签</button>
+      <button @click="createTag">新增标签</button>
     </div>
     <ul class="current">
       <li
@@ -17,7 +17,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import TagHelper from "@/mixins/tagHelper";
+import { mixins } from "vue-class-component";
 import { Component} from "vue-property-decorator";
 
 @Component({
@@ -27,7 +28,7 @@ import { Component} from "vue-property-decorator";
     }
   }
 })
-export default class Tags extends Vue {
+export default class Tags extends mixins(TagHelper) {
   // tagList = store.fetchTags();
   selectedTags: string[] = [];
 
