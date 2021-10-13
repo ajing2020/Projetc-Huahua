@@ -24,7 +24,6 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import FormItem from "@/components/Money/FormItem.vue";
 import DefaultButton from "@/components/DefaultButton.vue";
-import store from '@/store/index2'
 
 @Component({
   components: { FormItem, DefaultButton },
@@ -34,7 +33,7 @@ export default class EditLabel extends Vue {
 
   created() {
     const id = this.$route.params.id;
-    this.tag = store.findTag(id);
+    // this.tag = store.findTag(id);
     if (!this.tag) {
       this.$router.replace("/404");
     }
@@ -42,15 +41,15 @@ export default class EditLabel extends Vue {
 
   update(name: string) {
     if (this.tag) {
-      store.updateTag(this.tag.id, name);
+      // store.updateTag(this.tag.id, name);
     }
   }
 
   remove() {
     if (this.tag) {
-      if (store.removeTag(this.tag.id)) {
-        this.$router.back();
-      }
+      // if (store.removeTag(this.tag.id)) {
+        // this.$router.back();
+      // }
     }
   }
 

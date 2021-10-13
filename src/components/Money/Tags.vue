@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="tags">
     <div class="new">
@@ -22,10 +20,19 @@
 import createTag from '@/lib/createTag'
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
-@Component
+
+@Component({
+  computed:{
+    tagList(){
+      // return this.$store.fetchTags();
+      return []
+    }
+  }
+})
 export default class Tags extends Vue {
   @Prop() readonly dataSource: string[] | undefined;
   selectedTags: string[] = [];
+
   toggle(tag: string) {
     const index = this.selectedTags.indexOf(tag);
     if (index >= 0) {
