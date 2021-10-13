@@ -22,13 +22,14 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import DefaultButton from '@/components/DefaultButton.vue'
 import createTag from '@/lib/createTag'
+import store from '@/store/index2'
 
 @Component({
   components:{DefaultButton}
 })
 export default class Label extends Vue {
   
-  tags = window.tagList
+  tags = store.tagList
   createTag = createTag
   
 }
