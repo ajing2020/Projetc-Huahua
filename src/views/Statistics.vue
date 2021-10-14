@@ -10,17 +10,19 @@
 </template>
 
 <style lang="scss" scoped>
-::v-deep .type-tabs-item {
-  background: #c4c4c4;
-  &.selected {
-    background: white;
-    &::after {
-      display: none;
+::v-deep {
+  .type-tabs-item {
+    background: #c4c4c4;
+    &.selected {
+      background: white;
+      &::after {
+        display: none;
+      }
     }
   }
-}
-::v-deep .interval-tabs-item{
+  .interval-tabs-item {
     height: 48px;
+  }
 }
 </style>
 
