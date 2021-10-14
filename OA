@@ -1,0 +1,54 @@
+[33med96984[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: 删除types.vue
+[33m806c558[m HEAD@{1}: commit: 在money.vue里面使用tabs
+[33m446023f[m HEAD@{2}: commit: 抽离Tabs.vue，使用在Statistics.vue里面
+[33mba12be7[m HEAD@{3}: commit: 成功全部使用Vuex进行数据管理
+[33maddc73f[m HEAD@{4}: commit: 修复editlabel页面
+[33m5e45080[m HEAD@{5}: commit: 所有computed改成get函数
+[33ma27fc81[m HEAD@{6}: commit: Labels.vue 使用Vuex
+[33m47f4c70[m HEAD@{7}: commit: Tags.vue使用vuex
+[33me0de00e[m HEAD@{8}: commit: Money.vue使用VueX
+[33m6d43a65[m HEAD@{9}: commit: 模块化的store，删除了models
+[33m6eb799e[m HEAD@{10}: commit: 将所有数据操作封装到store中
+[33m8468e8e[m HEAD@{11}: commit: 封装record的操作
+[33m4c0e744[m HEAD@{12}: commit: 封装tagListd的增删改查
+[33m692a847[m HEAD@{13}: commit: 处理money页面无法新增标签bug，封装window.createTag
+[33m6d5cede[m HEAD@{14}: commit: 使用全局tagList
+[33m0b810d9[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{15}: commit: 将create封装到recordList里面
+[33me434197[m HEAD@{16}: commit: 重新封装recordListModel
+[33m4edc932[m HEAD@{17}: commit: 有些多余的代码删除一些
+[33m4f6af5b[m HEAD@{18}: commit: 解决id生成问题
+[33m79a02e0[m HEAD@{19}: commit: 可以编辑和删除标签
+[33madc1d37[m HEAD@{20}: commit: 展示tag的name
+[33mbbb41e0[m HEAD@{21}: commit: 修复了value被赋值的问题
+[33mda47766[m HEAD@{22}: commit: 消除Tags.vue的警告
+[33m30d0e0b[m HEAD@{23}: commit: 完成了css部分，提取了一些通用的组件
+[33mab23a6f[m HEAD@{24}: commit: 改造Notes.vue变成了通用组件
+[33md55388e[m HEAD@{25}: commit: 点击标签可以跳转到编辑页面
+[33m80825f9[m HEAD@{26}: commit: 新增了editLabel组件，同时设置了一下路由可以传参
+[33meedb7b1[m HEAD@{27}: commit: 把tag的string改为{id,name}
+[33m58962db[m HEAD@{28}: commit: 标签页面的展示和创建标签功能实现
+[33m2f29fd3[m HEAD@{29}: commit: 封装了一个model 随后把RecordItem变为全局类型
+[33m8cc8c08[m HEAD@{30}: commit: 添加了时间一个选项
+[33m37bbfc6[m HEAD@{31}: commit: 把record复制一份之后保存在localstorage
+[33m8ffff5d[m HEAD@{32}: commit: 收集了money页面四个小组件的数据
+[33m8530636[m HEAD@{33}: commit: 可以选中或取消tag
+[33m0bd33db[m HEAD@{34}: commit: 重新修改notes组件 使用了v-model代替了:value和@input绑定
+[33m2c145e0[m HEAD@{35}: commit: 完成notes组件功能
+[33m49607c5[m HEAD@{36}: commit: 基本完成NumberPad组件
+[33me54f38e[m HEAD@{37}: commit: 完成了组件Type功能
+[33m3b06387[m HEAD@{38}: commit: 使用Js实现了组件的一个功能
+[33ma165cf5[m HEAD@{39}: commit: 模块化 把Mony内容拆分为组件
+[33m1b5e4f5[m HEAD@{40}: commit: money部分的html和css已经写好了
+[33mb384e32[m HEAD@{41}: commit: 书写了money的html 做了一些写css前的准备
+[33md556e99[m HEAD@{42}: Branch: renamed refs/heads/master to refs/heads/main
+[33md556e99[m HEAD@{44}: commit: 消除了svg图片自带样式的问题
+[33m0292f84[m HEAD@{45}: commit: 导航栏添加了样式
+[33md7c1a3a[m HEAD@{46}: commit: 加svg的icon 然后也把icon封装成了一个组件
+[33m9b637d7[m HEAD@{47}: commit: 用了插槽去除了重复代码，加入了svg图片暂时还没使用
+[33m367d302[m HEAD@{48}: commit: money页面布局
+[33m4643a30[m HEAD@{49}: commit: 删除了一些不用的东西 例如初始化的home
+[33m398b8aa[m HEAD@{50}: commit: 添加404
+[33m677cdc7[m HEAD@{51}: commit: 全局引入Nav
+[33m4d956e6[m HEAD@{52}: commit: 三个页面创建了 路由设置了一下
+[33m7d3714b[m HEAD@{53}: commit: 最开始第一次提交
+[33m79c6aeb[m HEAD@{54}: commit (initial): init

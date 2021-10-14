@@ -9,7 +9,7 @@
         @update:value="onUpdateNotes"
       />
     </div>
-    <Tags />
+    <Tags @update:value="onUpdateTag" />
   </Layout>
 </template>
 
@@ -36,6 +36,12 @@ export default class Money extends Vue {
 
   created() {
     this.$store.commit("fetchRecords");
+  }
+
+  onUpdateTag(value:string[]){
+    this.record.tags = value
+    console.log(this.record.tags);
+    
   }
 
   onUpdateNotes(value: string) {
