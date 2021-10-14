@@ -33,12 +33,15 @@ export default class Tags extends mixins(TagHelper) {
   }
 
   toggle(name: string) {
-    const index = this.selectedTags.indexOf(name);
-    if (index >= 0) {
-      this.selectedTags.splice(index, 1);
-    } else {
-      this.selectedTags.push(name);
-    }
+    //只能选一个标签
+    // const index = this.selectedTags.indexOf(name);
+    // if (index >= 0) {
+    //   this.selectedTags.splice(index, 1);
+    // } else {
+      
+    // }
+    this.selectedTags = []
+    this.selectedTags.push(name);
     this.$emit("update:value", this.selectedTags);
   }
   create() {
