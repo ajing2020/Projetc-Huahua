@@ -26,7 +26,7 @@
           </ol>
         </li>
       </ol>
-      <div class="removeRecordTip">点击删除</div>
+      <div class="removeRecordTip">点击记录可删除</div>
     </div>
     <div v-else class="noResult">
       目前没有相关记录
