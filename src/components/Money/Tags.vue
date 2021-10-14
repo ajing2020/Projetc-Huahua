@@ -3,7 +3,7 @@
     <div class="new">
       <button @click="createTag">新增标签</button>
     </div>
-    <ul class="current">
+    <ul v-if="tagList.length > 0" class="current">
       <li
         v-for="tag in tagList"
         :key="tag.id"
@@ -13,6 +13,12 @@
         {{ tag.name }}
       </li>
     </ul>
+    <div v-else>
+      请您先添加需要的标签哦
+      <Icon name="happy"/>
+      <Icon name="happy"/>
+      <Icon name="happy"/>
+      </div>
   </div>
 </template>
 
@@ -34,15 +40,14 @@ export default class Tags extends mixins(TagHelper) {
 
   toggle(name: string) {
     //只能选一个标签
-    // const index = this.selectedTags.indexOf(name);
-    // if (index >= 0) {
-    //   this.selectedTags.splice(index, 1);
-    // } else {
-      
-    // }
-    this.selectedTags = []
-    this.selectedTags.push(name);
-    this.$emit("update:value", this.selectedTags);
+    const index = this.selectedTags.indexOf(name);
+    if (index >= 0) {
+      this.selectedTags.splice(index, 1);
+    } else {
+      this.selectedTags = [];
+      this.selectedTags.push(name);
+      this.$emit("update:value", this.selectedTags);
+    }
   }
   create() {
     const name = window.prompt("请输入标签名");
@@ -68,7 +73,7 @@ export default class Tags extends mixins(TagHelper) {
     flex-wrap: wrap;
 
     > li {
-      $bg: #d9d9d9;
+      $bg: #66a5e4;
       background: $bg;
       $h: 24px;
       height: $h;
@@ -78,7 +83,7 @@ export default class Tags extends mixins(TagHelper) {
       margin-right: 12px;
       margin-top: 4px;
       &.selected {
-        background: darken($bg, 40%);
+        background: #2a5f94;
         color: white;
       }
     }
@@ -89,7 +94,6 @@ export default class Tags extends mixins(TagHelper) {
       background: transparent;
       border: none;
       border-bottom: 1px solid;
-      color: #999;
       padding: 0 3px;
     }
   }

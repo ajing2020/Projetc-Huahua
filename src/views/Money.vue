@@ -10,6 +10,7 @@
       />
     </div>
     <Tags @update:value="onUpdateTag" />
+    <div class="label-title">花花记账</div>
   </Layout>
 </template>
 
@@ -38,10 +39,8 @@ export default class Money extends Vue {
     this.$store.commit("fetchRecords");
   }
 
-  onUpdateTag(value:string[]){
-    this.record.tags = value
-    console.log(this.record.tags);
-    
+  onUpdateTag(value: string[]) {
+    this.record.tags = value;
   }
 
   onUpdateNotes(value: string) {
@@ -52,7 +51,14 @@ export default class Money extends Vue {
     this.record.amount = parseFloat(value);
   }
   saveRecord() {
-    this.$store.commit("createRecord", this.record);
+    if (!this.record.tags || this.record.tags.length === 0) {
+      window.alert("请选一个标签");
+      return;
+    } else {
+      this.$store.commit("createRecord", this.record);
+
+      window.alert("记录成功啦！");
+    }
   }
 }
 </script>
@@ -65,6 +71,14 @@ export default class Money extends Vue {
 </style>
 
 <style lang="scss" scoped>
+.label-title{
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  background: #336699;
+  color: white;
+  margin-bottom: 8px;
+}
 .notes {
   padding: 12px 0;
 }

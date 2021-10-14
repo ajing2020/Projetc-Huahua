@@ -8,11 +8,11 @@
 </template>
 
 <script lang="ts">
-import NavTab from '@/components/NavTab.vue'
+import NavTab from "@/components/NavTab.vue";
 export default {
   props: ["classPrefix"],
   name: "Layout",
-  components:{NavTab}
+  components: { NavTab },
 };
 </script>
 
@@ -20,7 +20,7 @@ export default {
 .layout-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 .content {
   overflow: auto;

@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <div class="label-title">管理标签<Icon name="label"/></div>
     <div class="tags">
       <router-link
         class="tag"
@@ -26,7 +27,7 @@ import { mixins } from "vue-class-component";
 import TagHelper from "@/mixins/tagHelper";
 
 @Component({
-  components: { DefaultButton },
+  components: { DefaultButton},
 })
 export default class Label extends mixins(TagHelper) {
   get tags() {
@@ -39,6 +40,14 @@ export default class Label extends mixins(TagHelper) {
 </script>
 
 <style lang="scss" scoped>
+.label-title{
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  background: #336699;
+  color: white;
+  margin-bottom: 8px;
+}
 .tags {
   background: white;
   font-size: 16px;
@@ -58,8 +67,8 @@ export default class Label extends mixins(TagHelper) {
   }
 }
 .createTag {
-  background: #767676;
-  color: white;
+  background: #4688ca;
+  color: #000;
   border-radius: 4px;
   border: none;
   height: 40px;

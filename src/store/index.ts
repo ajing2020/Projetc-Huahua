@@ -6,7 +6,7 @@ import router from '@/router'
 
 Vue.use(Vuex)
 
- 
+
 const store = new Vuex.Store({
   state: {
     recordList: [],
@@ -24,6 +24,15 @@ const store = new Vuex.Store({
       state.recordList.push(record2);
       store.commit('saveRecords')
     },
+    removeRecord(state, record: RecordItem) {
+      for (let i = 0; i < state.recordList.length; i++) {
+        if (record === state.recordList[i]) {
+          state.recordList.splice(i, 1);
+        }
+      }
+      store.commit('saveRecords')
+
+    },
 
     saveRecords(state) {
       window.localStorage.setItem('recordList', JSON.stringify(state.recordList));
@@ -31,12 +40,14 @@ const store = new Vuex.Store({
 
     fetchTags(state) {
       state.tagList = JSON.parse(window.localStorage.getItem('tagList') || "[]");
+
     },
 
     createTag(state, name: string) {
       const names = state.tagList.map(item => item.name)
       if (names.indexOf(name) >= 0) {
         window.alert("标签重复");
+        return
       }
       const id = createId().toString();
       state.tagList.push({ id, name: name })

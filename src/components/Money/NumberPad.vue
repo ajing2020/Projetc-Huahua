@@ -56,7 +56,6 @@ export default class NumberPad extends Vue {
     this.$emit("update:value", parseFloat(this.output));
     this.$emit("submit", this.output);
     this.output = "";
-    window.alert("记录成功啦！");
     window.location.reload();
   }
 }
@@ -76,6 +75,7 @@ export default class NumberPad extends Vue {
   .buttons {
     @extend %clearfix;
     > button {
+      color: white;
       width: 25%;
       height: 64px;
       float: left;
@@ -88,7 +88,7 @@ export default class NumberPad extends Vue {
       &.zero {
         width: 25 * 2%;
       }
-      $bg: #f2f2f2;
+      $bg: #4688ca;
       &:nth-child(1) {
         background: $bg;
       }
